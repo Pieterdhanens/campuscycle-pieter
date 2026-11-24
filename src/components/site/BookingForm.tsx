@@ -92,12 +92,11 @@ function RepairChoice({ repairs }: { repairs: BookingFormProps['repairs'] }) {
       </legend>
       {repairs.map((repair) => {
         // To show each repair's price too, replace the line under this comment with this line:
-        //   const label = repair.name + ', ' + formatPrice(repair.price)
         // and add this line at the top of the file, under the other import lines:
         //   import { formatPrice } from '@/lib/format'
         // It reads each repair's own price, from the same record as the price list: nothing is copied.
-const label = repair.name + ', ' + formatPrice(repair.price)        
-return (
+        const label = repair.name + ', ' + formatPrice(repair.price)       
+          return (
           <label key={repair.id} className="flex min-h-11 items-center gap-3">
             <input type="checkbox" name="repairs" value={repair.id} defaultChecked={sent.repairs?.includes(String(repair.id))} className="size-5 accent-ink" />
             {label}
