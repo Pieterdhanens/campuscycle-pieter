@@ -77,7 +77,9 @@ async function sendBooking(previous: BookingResult | null, formData: FormData): 
 
 // W6: the repair choice, ready to switch on. Remove the // in front of every line of this function.
 // Then replace the whole line <RepairChoice repairs={props.repairs} /> in the form below
-// with <RepairChoice repairs={props.repairs} />. The server side is the two lines the W6 comment in
+// with <RepairChoice repairs={props.repairs} />.
+// 
+
 // createBooking.ts names (src/tasks/book-slot/createBooking.ts).
 function RepairChoice({ repairs }: { repairs: BookingFormProps['repairs'] }) {
   // The repairs ticked in the last send, so they stay ticked when the form comes back.
@@ -185,7 +187,7 @@ export function BookingForm(props: BookingFormProps) {
           />
           {errors.note && <FieldError id="note-error">{errors.note}</FieldError>}
         </div>
-
+{/* W6: <RepairChoice repairs={props.repairs} /> */}
         <RepairChoice repairs={props.repairs} /> 
 
         {/* The trap field: name="extra" is TRAP_FIELD in src/tasks/book-slot/guards.ts (keep the two the
